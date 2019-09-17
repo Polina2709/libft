@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jczech <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/17 18:08:39 by jczech            #+#    #+#             */
-/*   Updated: 2019/09/17 18:15:41 by jczech           ###   ########.fr       */
+/*   Created: 2019/09/17 14:25:55 by jczech            #+#    #+#             */
+/*   Updated: 2019/09/17 14:29:09 by jczech           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_putchar(char c)
+int	ft_strequ(char const *s1, char const *s2)
 {
-	write(1, &c, 1);
+	int	a;
+
+	a = ft_strcmp((char *)s1, (char *)s2);
+	if (a == 0)
+		return (1);
 	return (0);
 }

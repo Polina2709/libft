@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jczech <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/17 18:08:39 by jczech            #+#    #+#             */
-/*   Updated: 2019/09/17 18:15:41 by jczech           ###   ########.fr       */
+/*   Created: 2019/09/17 11:05:14 by jczech            #+#    #+#             */
+/*   Updated: 2019/09/17 11:25:38 by jczech           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_putchar(char c)
+void	*ft_memalloc(size_t size)
 {
-	write(1, &c, 1);
-	return (0);
+	void	*new_mem;
+
+	new_mem = malloc(size);
+	if (new_mem == NULL)
+		return (NULL);
+	ft_bzero(new_mem, size);
+	return (new_mem);
 }

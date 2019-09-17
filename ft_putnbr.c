@@ -6,16 +6,11 @@
 /*   By: jczech <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/06 14:54:27 by jczech            #+#    #+#             */
-/*   Updated: 2019/09/12 16:04:43 by jczech           ###   ########.fr       */
+/*   Updated: 2019/09/17 18:23:42 by jczech           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
 
 void	ft_putnbr(int nb)
 {
