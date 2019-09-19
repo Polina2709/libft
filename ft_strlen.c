@@ -6,21 +6,20 @@
 /*   By: jczech <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 13:33:04 by jczech            #+#    #+#             */
-/*   Updated: 2019/09/04 13:41:44 by jczech           ###   ########.fr       */
+/*   Updated: 2019/09/19 14:58:48 by jczech           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include "libft.h"
+
+size_t	ft_strlen(const char *str)
 {
-	int i;
-	int count;
+	size_t	i;
+	size_t	count;
 
 	i = 0;
 	count = 0;
-	while (str[i] != '\0')
-	{
-		i++;
+	while (str[i++] != '\0')
 		count++;
-	}
 	return (count);
 }

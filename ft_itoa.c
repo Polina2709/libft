@@ -6,7 +6,7 @@
 /*   By: jczech <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 17:52:45 by jczech            #+#    #+#             */
-/*   Updated: 2019/09/17 20:20:44 by jczech           ###   ########.fr       */
+/*   Updated: 2019/09/19 17:22:52 by jczech           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,15 @@
 char	*ft_revstr(char *s)
 {
 	char	*rev_s;
-	int		len;
-	int		i;
-	int		j;
+	size_t	len;
+	size_t	i;
+	size_t	j;
 
 	j = 1;
 	i = 0;
 	len = ft_strlen(s) - 1;
-	rev_s = (char *)malloc(sizeof(char) * len + 1);
+	if (!(rev_s = (char *)malloc(sizeof(char) * len + 1)))
+		return (NULL);
 	if (s[j] == '-')
 	{
 		rev_s[i++] = '-';
@@ -64,10 +65,17 @@ char	*ft_itoa(int n)
 {
 	char	*s;
 
-	s = (char *)malloc(sizeof(char) * 15);
 	if (n == -2147483648)
+	{
+		if (!(s = (char *)malloc(sizeof(char) * 12)))
+			return (NULL);
 		s = "-2147483648\0";
+	}
 	else
+	{
+		if (!(s = (char *)malloc(sizeof(char) * 15)))
+			return (NULL);
 		s = ft_itoa_helper(s, n);
+	}
 	return (s);
 }

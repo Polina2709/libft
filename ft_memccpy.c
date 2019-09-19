@@ -6,7 +6,7 @@
 /*   By: jczech <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/12 19:15:20 by jczech            #+#    #+#             */
-/*   Updated: 2019/09/12 19:26:55 by jczech           ###   ########.fr       */
+/*   Updated: 2019/09/19 15:44:40 by jczech           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	while (i < n)
 	{
 		d[i] = s[i];
-		if (s[i] == c)
+		if (s[i] == (unsigned char)c)
 			return (&dst[i + 1]);
 		i++;
 	}

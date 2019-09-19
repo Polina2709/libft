@@ -6,22 +6,22 @@
 /*   By: jczech <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 17:44:09 by jczech            #+#    #+#             */
-/*   Updated: 2019/09/12 20:53:04 by jczech           ###   ########.fr       */
+/*   Updated: 2019/09/19 15:03:45 by jczech           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(char *src)
+char	*ft_strdup(const char *src)
 {
-	int		length;
+	size_t	length;
 	char	*n_string;
 	int		i;
 
 	i = 0;
 	length = ft_strlen(src);
 	n_string = (char*)malloc(sizeof(char) * length + 1);
-	if (n_string == NULL)
+	if (!n_string)
 		return (NULL);
 	while (src[i] != '\0')
 	{

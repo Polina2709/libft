@@ -6,7 +6,7 @@
 /*   By: jczech <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/12 19:27:46 by jczech            #+#    #+#             */
-/*   Updated: 2019/09/12 20:03:46 by jczech           ###   ########.fr       */
+/*   Updated: 2019/09/19 15:57:28 by jczech           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	d = (unsigned char *)dst;
 	s1 = s + len - 1;
 	d1 = d + len - 1;
+	if (!s && !d)
+		return (0);
 	if (d >= s)
 	{
 		while (len--)
