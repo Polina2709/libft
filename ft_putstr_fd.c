@@ -6,7 +6,7 @@
 /*   By: jczech <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 18:30:00 by jczech            #+#    #+#             */
-/*   Updated: 2019/09/17 18:35:22 by jczech           ###   ########.fr       */
+/*   Updated: 2019/09/20 19:49:23 by jczech           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@ void	ft_putstr_fd(char const *s, int fd)
 	int	i;
 
 	i = 0;
-	while (s[i] != '\0')
-		ft_putchar_fd(s[i++], fd);
+	if (s)
+	{
+		while (s[i] != '\0')
+			ft_putchar_fd(s[i++], fd);
+	}
 }

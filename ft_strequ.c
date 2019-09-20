@@ -6,7 +6,7 @@
 /*   By: jczech <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 14:25:55 by jczech            #+#    #+#             */
-/*   Updated: 2019/09/17 14:29:09 by jczech           ###   ########.fr       */
+/*   Updated: 2019/09/20 20:30:41 by jczech           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,11 @@ int	ft_strequ(char const *s1, char const *s2)
 {
 	int	a;
 
-	a = ft_strcmp((char *)s1, (char *)s2);
-	if (a == 0)
-		return (1);
+	a = ft_strcmp(s1, s2);
+	if (s1 && s2)
+	{
+		if (a == 0)
+			return (1);
+	}
 	return (0);
 }

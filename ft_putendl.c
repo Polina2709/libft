@@ -6,7 +6,7 @@
 /*   By: jczech <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 18:13:39 by jczech            #+#    #+#             */
-/*   Updated: 2019/09/17 18:22:51 by jczech           ###   ########.fr       */
+/*   Updated: 2019/09/20 19:32:15 by jczech           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,15 @@
 
 void	ft_putendl(char const *s)
 {
-	int	len;
-	int	i;
+	size_t	len;
+	size_t	i;
 
 	i = 0;
-	len = ft_strlen((char *)s);
-	while (i < len)
-		ft_putchar(s[i++]);
-	ft_putchar('\n');
+	if (s)
+	{
+		len = ft_strlen(s);
+		while (i < len)
+			ft_putchar(s[i++]);
+		ft_putchar('\n');
+	}
 }

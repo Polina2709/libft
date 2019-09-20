@@ -6,13 +6,13 @@
 /*   By: jczech <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 17:52:45 by jczech            #+#    #+#             */
-/*   Updated: 2019/09/19 17:22:52 by jczech           ###   ########.fr       */
+/*   Updated: 2019/09/20 19:18:02 by jczech           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_revstr(char *s)
+static char	*ft_revstr(char *s)
 {
 	char	*rev_s;
 	size_t	len;
@@ -37,7 +37,7 @@ char	*ft_revstr(char *s)
 	return (rev_s);
 }
 
-char	*ft_itoa_helper(char *s, int n)
+static char	*ft_itoa_helper(char *s, int n)
 {
 	int i;
 
@@ -73,7 +73,7 @@ char	*ft_itoa(int n)
 	}
 	else
 	{
-		if (!(s = (char *)malloc(sizeof(char) * 15)))
+		if (!(s = (char *)malloc(sizeof(char) * 12)))
 			return (NULL);
 		s = ft_itoa_helper(s, n);
 	}

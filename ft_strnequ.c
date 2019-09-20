@@ -6,7 +6,7 @@
 /*   By: jczech <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 14:30:53 by jczech            #+#    #+#             */
-/*   Updated: 2019/09/17 14:43:22 by jczech           ###   ########.fr       */
+/*   Updated: 2019/09/20 19:17:05 by jczech           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_strnequ(char const *s1, char const *s2, size_t n)
 	int		a;
 
 	a = 1;
-	a = ft_strncmp((char *)s1, (char *)s2, n);
+	a = ft_strncmp(s1, s2, n);
 	if (a == 0)
 		return (1);
 	return (0);

@@ -6,7 +6,7 @@
 #    By: jczech <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/10 16:29:26 by jczech            #+#    #+#              #
-#    Updated: 2019/09/18 22:42:02 by jczech           ###   ########.fr        #
+#    Updated: 2019/09/20 19:34:49 by jczech           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,3 +30,5 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all clean

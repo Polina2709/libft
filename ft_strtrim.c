@@ -6,7 +6,7 @@
 /*   By: jczech <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 15:51:08 by jczech            #+#    #+#             */
-/*   Updated: 2019/09/17 16:18:23 by jczech           ###   ########.fr       */
+/*   Updated: 2019/09/20 20:44:32 by jczech           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ char	*ft_strtrim(char const *s)
 
 	j = 0;
 	i = 0;
-	len = ft_strlen((char *)s);
-	copy = (char *)malloc(sizeof(char *) * len);
+	len = ft_strlen(s);
+	copy = (char *)malloc(sizeof(char *) * len + 1);
 	if (!copy)
 		return (NULL);
 	while (s[len - 1] == ' ' || s[len - 1] == '\n' || s[len - 1] == '\t')
