@@ -6,7 +6,7 @@
 /*   By: jczech <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 11:30:16 by jczech            #+#    #+#             */
-/*   Updated: 2019/09/20 17:21:37 by jczech           ###   ########.fr       */
+/*   Updated: 2019/09/21 22:22:48 by jczech           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strnew(size_t size)
 {
 	char	*new_str;
 
-	if (size + 1 == 0)
+	if (size + 1 < size)
 		return (NULL);
 	new_str = (char *)malloc(size + 1);
 	if (new_str == NULL)

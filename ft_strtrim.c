@@ -6,11 +6,18 @@
 /*   By: jczech <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 15:51:08 by jczech            #+#    #+#             */
-/*   Updated: 2019/09/20 20:44:32 by jczech           ###   ########.fr       */
+/*   Updated: 2019/09/21 22:12:59 by jczech           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static size_t	f_end(char const *s, size_t len)
+{
+	while (s[len - 1] == ' ' || s[len - 1] == '\n' || s[len - 1] == '\t')
+		len--;
+	return (len);
+}
 
 char	*ft_strtrim(char const *s)
 {
@@ -21,16 +28,22 @@ char	*ft_strtrim(char const *s)
 
 	j = 0;
 	i = 0;
-	len = ft_strlen(s);
-	copy = (char *)malloc(sizeof(char *) * len + 1);
-	if (!copy)
+	if (!s)
 		return (NULL);
-	while (s[len - 1] == ' ' || s[len - 1] == '\n' || s[len - 1] == '\t')
-		len--;
-	while (s[i] == ' ' || s[i] == '\t' || s[i] == '\n')
-		i++;
-	while (i < len)
-		copy[j++] = s[i++];
+	len = ft_strlen(s);
+	i = ft_from_begin(s, i);
+	if (i == len)
+	{
+		if (!(copy = (char *)malloc(sizeof(char *) * 1)))
+			return (NULL);
+	}
+	else
+	{
+		if (!(copy = (char *)malloc(sizeof(char) * (f_end(s, len) - i + 1))))
+			return (NULL);
+		while (i < f_end(s, len))
+			copy[j++] = s[i++];
+	}
 	copy[j] = '\0';
 	return (copy);
 }
