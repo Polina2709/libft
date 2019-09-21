@@ -6,7 +6,7 @@
 /*   By: jczech <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 15:51:08 by jczech            #+#    #+#             */
-/*   Updated: 2019/09/21 22:12:59 by jczech           ###   ########.fr       */
+/*   Updated: 2019/09/21 22:33:33 by jczech           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static size_t	f_end(char const *s, size_t len)
 	return (len);
 }
 
-char	*ft_strtrim(char const *s)
+char			*ft_strtrim(char const *s)
 {
 	char	*copy;
 	size_t	len;

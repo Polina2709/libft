@@ -6,7 +6,7 @@
 /*   By: jczech <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 16:33:34 by jczech            #+#    #+#             */
-/*   Updated: 2019/09/21 21:49:04 by jczech           ###   ########.fr       */
+/*   Updated: 2019/09/21 22:43:49 by jczech           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,6 @@ int		ft_nbrlen(int n);
 int		ft_isupper(int c);
 int		ft_islower(int c);
 size_t	ft_from_begin(char const *s, size_t i);
+int		ft_char_sign(char s);
 
 #endif

@@ -6,13 +6,13 @@
 /*   By: jczech <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/21 21:46:39 by jczech            #+#    #+#             */
-/*   Updated: 2019/09/21 22:14:14 by jczech           ###   ########.fr       */
+/*   Updated: 2019/09/21 22:35:36 by jczech           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t  ft_from_begin(char const *s, size_t i)
+size_t	ft_from_begin(char const *s, size_t i)
 {
 	while (s[i] == ' ' || s[i] == '\t' || s[i] == '\n')
 		i++;

@@ -6,7 +6,7 @@
 /*   By: jczech <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 14:45:25 by jczech            #+#    #+#             */
-/*   Updated: 2019/09/21 22:18:14 by jczech           ###   ########.fr       */
+/*   Updated: 2019/09/21 22:33:07 by jczech           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	char			*sub_str;
+	char	*sub_str;
 	size_t	i;
 
 	i = 0;
