@@ -6,11 +6,13 @@
 /*   By: jczech <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 17:52:45 by jczech            #+#    #+#             */
-/*   Updated: 2019/09/20 19:18:02 by jczech           ###   ########.fr       */
+/*   Updated: 2019/09/21 21:01:18 by jczech           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+
 
 static char	*ft_revstr(char *s)
 {
@@ -21,7 +23,7 @@ static char	*ft_revstr(char *s)
 
 	j = 1;
 	i = 0;
-	len = ft_strlen(s) - 1;
+	len = ft_strlen((const char *)s) - 1;
 	if (!(rev_s = (char *)malloc(sizeof(char) * len + 1)))
 		return (NULL);
 	if (s[j] == '-')
@@ -34,12 +36,13 @@ static char	*ft_revstr(char *s)
 		rev_s[i] = s[len--];
 		i++;
 	}
+	rev_s[i] = '\0';
 	return (rev_s);
 }
 
 static char	*ft_itoa_helper(char *s, int n)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	s[i++] = ' ';
@@ -57,14 +60,15 @@ static char	*ft_itoa_helper(char *s, int n)
 		s[i++] = n + '0';
 	s[i] = '\0';
 	s = ft_revstr(s);
-	s[i] = '\0';
 	return (s);
 }
 
-char	*ft_itoa(int n)
+char		*ft_itoa(int n)
 {
 	char	*s;
+	int		len;
 
+	len = ft_nbrlen(n);
 	if (n == -2147483648)
 	{
 		if (!(s = (char *)malloc(sizeof(char) * 12)))
@@ -73,7 +77,7 @@ char	*ft_itoa(int n)
 	}
 	else
 	{
-		if (!(s = (char *)malloc(sizeof(char) * 12)))
+		if (!(s = (char *)malloc(sizeof(char) * (len + 1))))
 			return (NULL);
 		s = ft_itoa_helper(s, n);
 	}
