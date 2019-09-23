@@ -6,7 +6,7 @@
 /*   By: jczech <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 16:18:52 by jczech            #+#    #+#             */
-/*   Updated: 2019/09/18 22:46:48 by jczech           ###   ########.fr       */
+/*   Updated: 2019/09/23 12:56:45 by jczech           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,35 +15,82 @@
 static int		ft_count_words(char *s, char c)
 {
 	int	words;
-	int	i;
+	int	index;
 
-	i = 0;
+	index = 0;
 	words = 0;
-	while (s[i])
+	while (s[index])
 	{
-		while (s[i] != c)
-			i++;
-		words++;
-		while (s[i] == c)
-			i++;
+		if  (s[index] == c)
+			index++;
+		else
+		{
+			while (s[index] != c)
+				index++;
+			words++;
+		}
 	}
 	return (words);
 }
 
-static int	ft_count_symbols(char *s, char c)
+static int	ft_count_symbols(char *s, char c, int i)
 {
-	int	symbols;
-	int i;
+	int	words;
+	int symbols;
+	int	index;
 
-	i = 0;
+	index = 0;
 	symbols = 0;
-	while (s[i] == c)
-		i++;
-	while (s[i++] != c)
-		symbols++;
+	words = 0;
+	while (s[index])
+	{
+		if  (s[index] == c)
+			index++;
+		else
+		{
+			while (s[index] != c)
+			{
+				if (words == i)
+					symbols++;
+					index++;
+			}
+			index++;
+			words++;
+		}
+	}
 	return (symbols);
 }
 
+static char	*ft_fill_arr(char *s, char *new_arr, char c, int i)
+{
+	int	words;
+	int symbols;
+	int	index;
+
+	index = 0;
+	symbols = 0;
+	words = 0;
+	while (s[index])
+	{
+		if  (s[index] == c)
+			index++;
+		else
+		{
+			while (s[index] != c)
+			{
+				while (words == i && (s[index] != c || s[index] != '\0'))
+				{
+					new_arr[i] = s[index++];
+					new_arr++;
+				}
+				index++;
+			words++;
+			}
+		}	
+	}
+	new_arr[i] = '\0';
+	return (new_arr);
+}
 
 char	**ft_strsplit(char const *s, char c)
 {
@@ -53,25 +100,28 @@ char	**ft_strsplit(char const *s, char c)
 
 	i = 0;
 	j = 0;
-	new_arr = (char **)malloc(sizeof(char *) * ft_count_words((char *)s, c) + 1);
-	if (!new_arr || !s)
+	if (!s)
+		return (NULL);
+	if (!(new_arr = (char **)malloc(sizeof(char *) * ft_count_words((char *)s, c) + 1)))
 		return (NULL);
 	while (i < ft_count_words((char *)s, c) + 1)
 	{
-		if (!(new_arr[i] = (char *)malloc(sizeof(char) * ft_count_symbols((char *)s, c) + 1)))
+		if (i == ft_count_words((char *)s, c))
 		{
-			// освободить память циклом
-			return (NULL);
-		i++;
-	}
-		
-		while ((char)s != (c + '0'))
-			new_arr[i][j++] = (char)s++;
-		while ((char)s == (c + '0'))
-			s++;
-		new_arr[i][j] = '\0';
-		i++;
-		j = 0;
+			if (!(new_arr[i] = (char *)malloc(sizeof(char) * 1)))
+				return (NULL);
+			new_arr[i][0] = '\0';
+		}
+		else
+		{
+			if (!(new_arr[i] = (char *)malloc(sizeof(char) * ft_count_symbols((char *)s, c, i) + 1)))
+			{
+				ft_memdel((void **)new_arr);
+				return (NULL);
+			}
+			new_arr[i] = ft_fill_arr((char *)s, new_arr[i], c, i);
+			i++;
+		}
 	}
 	return (new_arr);
 }
