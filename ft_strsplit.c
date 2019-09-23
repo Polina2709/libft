@@ -18,7 +18,7 @@ static int		ft_count_words(char *s, char c)
 	int	index;
 
 	index = 0;
-	words = 0;
+    words = 0;
 	while (s[index])
 	{
 		if  (s[index] == c)
@@ -78,17 +78,21 @@ static char	*ft_fill_arr(char *s, char *new_arr, char c, int i)
 		{
 			while (s[index] != c)
 			{
-				while (words == i && (s[index] != c || s[index] != '\0'))
+				while (words == i && s[index] != c)
 				{
-					new_arr[i] = s[index++];
+					*new_arr = s[index++];
 					new_arr++;
 				}
-				index++;
-			words++;
+                if (words == i)
+                {
+                    *new_arr = '\0';
+                    return (new_arr);
+                }
+			index++;
 			}
-		}	
+            words++;
+		}
 	}
-	new_arr[i] = '\0';
 	return (new_arr);
 }
 
@@ -116,7 +120,7 @@ char	**ft_strsplit(char const *s, char c)
 		{
 			if (!(new_arr[i] = (char *)malloc(sizeof(char) * ft_count_symbols((char *)s, c, i) + 1)))
 			{
-				ft_memdel((void **)new_arr);
+    			ft_memdel((void **)new_arr);
 				return (NULL);
 			}
 			new_arr[i] = ft_fill_arr((char *)s, new_arr[i], c, i);

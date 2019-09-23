@@ -19,7 +19,7 @@ static char	*ft_revstr(char *s)
 	size_t	i;
 	size_t	j;
 
-	j = 1;
+	j = 0;
 	i = 0;
 	len = ft_strlen((const char *)s) - 1;
 	if (!(rev_s = (char *)malloc(sizeof(char) * len + 1)))
@@ -43,7 +43,6 @@ static char	*ft_itoa_helper(char *s, int n)
 	int		i;
 
 	i = 0;
-	s[i++] = ' ';
 	if (n < 0)
 	{
 		s[i++] = '-';
