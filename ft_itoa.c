@@ -22,7 +22,7 @@ static char	*ft_revstr(char *s)
 	j = 0;
 	i = 0;
 	len = ft_strlen((const char *)s) - 1;
-	if (!(rev_s = (char *)malloc(sizeof(char) * len + 1)))
+	if (!(rev_s = (char *)malloc(sizeof(char) * len + 2)))
 		return (NULL);
 	if (s[j] == '-')
 	{
@@ -33,6 +33,8 @@ static char	*ft_revstr(char *s)
 	{
 		rev_s[i] = s[len--];
 		i++;
+        if (len == 0)
+            break;
 	}
 	rev_s[i] = '\0';
 	return (rev_s);
