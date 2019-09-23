@@ -31,10 +31,11 @@ static char	*ft_revstr(char *s)
 	}
 	while (len >= j)
 	{
-		rev_s[i] = s[len--];
+		rev_s[i] = s[len];
 		i++;
         if (len == 0)
             break;
+        len--;
 	}
 	rev_s[i] = '\0';
 	return (rev_s);
