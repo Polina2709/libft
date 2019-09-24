@@ -6,7 +6,7 @@
 /*   By: jczech <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 16:18:52 by jczech            #+#    #+#             */
-/*   Updated: 2019/09/23 12:56:45 by jczech           ###   ########.fr       */
+/*   Updated: 2019/09/24 13:25:49 by jczech           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,16 +108,16 @@ char	**ft_strsplit(char const *s, char c)
 		return (NULL);
 	if (!(new_arr = (char **)malloc(sizeof(char *) * ft_count_words((char *)s, c) + 1)))
 		return (NULL);
-	while (i < ft_count_words((char *)s, c) + 1)
+	while (i < ft_count_words((char *)s, c))
 	{
-		if (i == ft_count_words((char *)s, c))
+/*		if (i == ft_count_words((char *)s, c))
 		{
 			if (!(new_arr[i] = (char *)malloc(sizeof(char) * 1)))
 				return (NULL);
 			new_arr[i][0] = '\0';
 		}
-		else
-		{
+*/	//	else
+	//	{
 			if (!(new_arr[i] = (char *)malloc(sizeof(char) * ft_count_symbols((char *)s, c, i) + 1)))
 			{
     			ft_memdel((void **)new_arr);
@@ -126,6 +126,8 @@ char	**ft_strsplit(char const *s, char c)
 			new_arr[i] = ft_fill_arr((char *)s, new_arr[i], c, i);
 			i++;
 		}
-	}
+//	}
+	if (i == ft_count_words((char *)s, c))
+		new_arr[i] = NULL;
 	return (new_arr);
 }
