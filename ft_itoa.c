@@ -6,7 +6,7 @@
 /*   By: jczech <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 17:52:45 by jczech            #+#    #+#             */
-/*   Updated: 2019/09/24 14:05:58 by jczech           ###   ########.fr       */
+/*   Updated: 2019/09/24 14:11:53 by jczech           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ char		*ft_itoa(int n)
 
 	len = ft_nbrlen(n);
 	if (!(s = (char *)malloc(sizeof(char) * (len + 1))))
-			return (NULL);
+		return (NULL);
 	s[len--] = '\0';
 	if (n == 0)
 	{
 		s[0] = '0';
 		return (s);
 	}
-	while  (n != 0)
+	while (n != 0)
 	{
 		if (n < 0)
 		{
@@ -35,7 +35,7 @@ char		*ft_itoa(int n)
 		}
 		if (n > 0)
 			s[len--] = '0' + (n % 10);
-		n \= 10;
+		n = n / 10;
 	}
 	return (s);
 }

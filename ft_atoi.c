@@ -6,7 +6,7 @@
 /*   By: jczech <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 21:13:35 by jczech            #+#    #+#             */
-/*   Updated: 2019/09/21 22:42:49 by jczech           ###   ########.fr       */
+/*   Updated: 2019/09/24 11:37:24 by jczech           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_atoi(const char *str)
 		str++;
 	if (*str == '-' || *str == '+')
 	{
-		a = ft_char_sign(*str);
+		a = ft_char_sign(str);
 		str++;
 	}
 	while (*str >= '0' && *str <= '9')

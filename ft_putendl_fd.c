@@ -6,7 +6,7 @@
 /*   By: jczech <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 18:35:59 by jczech            #+#    #+#             */
-/*   Updated: 2019/09/20 19:38:17 by jczech           ###   ########.fr       */
+/*   Updated: 2019/09/24 19:33:41 by jczech           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_putendl_fd(char const *s, int fd)
 {
-	int	len;
-	int i;
+	size_t	len;
+	size_t	i;
 
 	i = 0;
 	if (s)

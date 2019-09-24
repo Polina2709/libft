@@ -6,7 +6,7 @@
 /*   By: jczech <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 16:33:34 by jczech            #+#    #+#             */
-/*   Updated: 2019/09/21 22:43:49 by jczech           ###   ########.fr       */
+/*   Updated: 2019/09/24 18:26:03 by jczech           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_strchr(const char *str, int ch);
 char	*ft_strrchr(const char *str, int ch);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strstr(const char *haystack, const char *needle);
-int		ft_strcmp(const char *s1,const char *s2);
+int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_atoi(const char *str);
 int		ft_isalpha(int ch);
@@ -61,7 +61,7 @@ char	*ft_strjoin(char const *s10, char const *s2);
 char	*ft_strtrim(char const *s);
 char	**ft_strsplit(char const *s, char c);
 char	*ft_itoa(int n);
-int		ft_putchar(char c);
+void	ft_putchar(char c);
 void	ft_putendl(char const *s);
 void	ft_putstr(char const *str);
 void	ft_putnbr(int nb);
@@ -73,6 +73,6 @@ int		ft_nbrlen(int n);
 int		ft_isupper(int c);
 int		ft_islower(int c);
 size_t	ft_from_begin(char const *s, size_t i);
-int		ft_char_sign(char s);
+int		ft_char_sign(const char *str);
 
 #endif
