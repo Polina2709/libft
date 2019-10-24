@@ -6,7 +6,7 @@
 /*   By: jczech <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 12:37:36 by jczech            #+#    #+#             */
-/*   Updated: 2019/10/10 16:03:32 by jczech           ###   ########.fr       */
+/*   Updated: 2019/10/24 14:49:25 by jczech           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	}
 	else
 	{
-		if (!(new_list->content = (void *)malloc(content_size)))
+		if (!(new_list->content = (void *)malloc(sizeof(content_size))))
 		{
 			free(new_list);
 			return (NULL);

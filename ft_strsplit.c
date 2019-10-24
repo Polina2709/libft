@@ -6,7 +6,7 @@
 /*   By: jczech <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/24 16:51:43 by jczech            #+#    #+#             */
-/*   Updated: 2019/09/24 19:33:20 by jczech           ###   ########.fr       */
+/*   Updated: 2019/10/24 18:13:32 by jczech           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,13 @@ static size_t	ft_start_word(char const *s, char c, size_t index)
 	return (start);
 }
 
+static void		ft_free(char **new_arr, size_t len_string)
+{
+	while (len_string--)
+		ft_strdel(&(new_arr[len_string]));
+	free(*new_arr);
+}
+
 char			**ft_strsplit(char const *s, char c)
 {
 	size_t	len_string;
@@ -69,7 +76,7 @@ char			**ft_strsplit(char const *s, char c)
 						(unsigned int)ft_start_word(s, c, index),
 						index - ft_start_word(s, c, index))))
 		{
-			free(new_arr);
+			ft_free(new_arr, len_string - 1);
 			return (NULL);
 		}
 	}
