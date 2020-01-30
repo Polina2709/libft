@@ -21,7 +21,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	n = ft_strlen(s1) + ft_strlen(s2);
 	join_str = (char *)malloc(sizeof(char *) * n + 1);
-	if (!join_str || s2 == '\0')
+	if (!join_str)
 		return (NULL);
 	ft_strcpy(join_str, s1);
 	join_str = ft_strcat(join_str, (const char *)s2);

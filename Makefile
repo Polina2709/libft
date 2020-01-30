@@ -43,7 +43,7 @@ OO = ft_atoi.o ft_bzero.o ft_from_begin.o ft_isalnum.o ft_isalpha.o \
 all: $(NAME)
 
 $(NAME):
-	gcc -Wall -Wextra -Werror  -c $(CC) -I libft.h
+	gcc -Wall -Wextra -Werror  -c $(CC) libft.h
 	ar rc $(NAME) $(OO)
 	ranlib $(NAME)
 
